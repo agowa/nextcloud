@@ -42,4 +42,4 @@ dockerhub:on-schedule:
   image: alpine:latest
   script:
     - apk add --update curl
-    - curl -X POST -H "Content-Type: application/json" --data "{ \"build\": true }"  https://cloud.docker.com/api/build/v1/source/$dockerhub_project_trigger_token/trigger/$dockerhub_trigger_token/call/
+    - 'curl -X POST -H "Content-Type: application/json" --data "{ \"build\": true }"  https://cloud.docker.com/api/build/v1/source/$dockerhub_project_trigger_token/trigger/$dockerhub_trigger_token/call/'
